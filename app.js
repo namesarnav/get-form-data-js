@@ -31,9 +31,15 @@ form.addEventListener('submit',function(event){
     }
 
     let format = document.querySelector('#fileType').value
-    if (format.toLowerCase()=='json' || format.toLowerCase()=='text') {
-        download(data, `data.${format.toLowerCase()}`, 'text/plain');
-    }else{
+    if (format.toLowerCase()=='json' || 
+        format.toLowerCase()=='text' || 
+        format.toLowerCase()=='txt' ) 
+        {
+            download(data, `data.${format.toLowerCase()}`, 'text/plain');
+        }
+
+    else
+    {
         alert('Please enter correct file format')
     }
     
