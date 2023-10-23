@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/data">
+        <div class="fields-main">
+            
+            <div class="fields">
+                <label for="first-name">First name:</label><br>
+                <input required type="text" placeholder="First Name" id="first-name" class="input-fields">
+            </div>
+            
+            <div class="fields">
+                <label for="first-name">Last name:</label><br>
+                <input  required type="text" placeholder="First Name" id="last-name" class="input-fields">
+            </div>
+
+            <div class="fields">
+                <label for="first-name">Email:</label><br>
+                <input required type="email" placeholder="Email" id="email" class="input-fields">
+            </div>
+
+            <div class="fields">
+                <label for="first-name">Phone:</label><br>
+                <input required type="tel" placeholder="Phone" id="phone" class="input-fields">
+            </div><br>
+
+            <div>
+                <label for="first-name">File Format (JSON or Text):</label><br>
+                <input required placeholder="Format" type="text" name="FileType" id="fileType">
+            </div>
+            <button>Download</button>
+        </div>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>
