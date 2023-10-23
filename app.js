@@ -3,13 +3,25 @@ let form = document.querySelector('form')
 form.addEventListener('submit',function(event){
     event.preventDefault()
     let inps = document.querySelectorAll('.input-fields');
-    let arr = [];
-    for (i of inps) {
+    try {
+        let arr = {
+            UserInputs: []
+        };
+        for (i of inps) {
         // console.dir(i)
-        let data = `{${i.placeholder}:${i.value}}`;
-        arr.push(data);
+            var data = {
+              key:value  
+            }
+            var key = `${i.placeholder}`;
+            var value = `${i.value}`
+            arr.UserInputs.push(data)
+        }
+        data = JSON.stringify(arr)
+        console.log(arr)
     }
-    data = JSON.stringify(arr)
+    catch(err){
+        console.log(err)
+    }
 
     function download(content, fileName, contentType) {
         var a = document.createElement("a");
@@ -19,9 +31,9 @@ form.addEventListener('submit',function(event){
         a.click();
     }
 
-    let format = document.querySelector('#fileType')
-    if (format.value=='json' || format.value=='text') {
-        download(data, `data.${format.value}`, 'text/plain');
+    let format = document.querySelector('#fileType').value
+    if (format.toLowerCase()=='json' || format.toLowerCase()=='text') {
+        download(data, `data.${format.toLowerCase()}`, 'text/plain');
     }else{
         alert('Please enter correct file format')
     }
