@@ -7,13 +7,12 @@ form.addEventListener('submit',function(event){
         let arr = {
             UserInputs: []
         };
-        for (i of inps) {
+        for (let i of inps) {
         // console.dir(i)
-            var data = {
-              key:value  
+            const data = {
+                [i.placeholder]:i.value
             }
-            var key = `${i.placeholder}`;
-            var value = `${i.value}`
+
             arr.UserInputs.push(data)
         }
         data = JSON.stringify(arr)
